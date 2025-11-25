@@ -1,4 +1,4 @@
-# ColorfulTodo 🌈
+# ColorfulTodo 🌈 (its generated via Cantata)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](#)
