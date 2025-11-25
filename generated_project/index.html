@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorfulTodo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <!-- Header with title and dark‑mode toggle -->
+    <header role="banner" class="app-header">
+        <h1 class="app-title">ColorfulTodo</h1>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    </header>
+
+    <!-- Main Todo Application -->
+    <section id="todoApp" class="todo-app" role="main">
+        <!-- New task input form -->
+        <form id="newTaskForm" autocomplete="off" aria-label="Add new task">
+            <input
+                type="text"
+                id="newTaskInput"
+                placeholder="What needs to be done?"
+                aria-label="New task"
+                autocomplete="off"
+                required
+            >
+            <!-- Hidden submit button to allow form submission via Enter key -->
+            <button type="submit" style="display:none;" aria-hidden="true"></button>
+        </form>
+
+        <!-- Task list -->
+        <ul id="taskList" class="task-list" role="list" aria-live="polite"></ul>
+
+        <!-- Footer with filters and clear completed -->
+        <div class="footer" role="contentinfo">
+            <div class="filters" aria-label="Task filters">
+                <button class="filter" data-filter="all" id="filterAll" aria-pressed="true">All</button>
+                <button class="filter" data-filter="active" id="filterActive" aria-pressed="false">Active</button>
+                <button class="filter" data-filter="completed" id="filterCompleted" aria-pressed="false">Completed</button>
+            </div>
+            <button id="clearCompleted" class="clear-completed">Clear completed</button>
+        </div>
+    </section>
+</body>
+</html>
