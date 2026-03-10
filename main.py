@@ -14,7 +14,7 @@ def main() -> None:
 
     llm = ChatOpenAI(
         model=cfg.model,
-        api_key=cfg.api_key.get_secret_value(),
+        api_key=cfg.api_key,
         base_url=cfg.base_url,
         temperature=cfg.temperature,
     )
