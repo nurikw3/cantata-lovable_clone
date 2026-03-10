@@ -1,3 +1,5 @@
+!['preview'](assets/preview.jpg)
+
 # Cantata — Lovable Clone
 
 > An AI-powered code generation agent that turns a plain text prompt into a fully working project — files, structure, and all.
@@ -12,11 +14,11 @@ Cantata uses a multi-agent pipeline built on **LangGraph** to go from a user pro
 User Prompt → [Planner] → [Architect] → [Coder × N] → generated_project/
 ```
 
-| Agent | Role |
-|---|---|
-| **Planner** | Understands the request and produces a high-level plan |
-| **Architect** | Breaks the plan into concrete implementation steps with file paths |
-| **Coder** | Executes each step one by one — reads, writes, and runs shell commands |
+| Agent               | Role                                                                    |
+| ------------------- | ----------------------------------------------------------------------- |
+| **Planner**   | Understands the request and produces a high-level plan                  |
+| **Architect** | Breaks the plan into concrete implementation steps with file paths      |
+| **Coder**     | Executes each step one by one — reads, writes, and runs shell commands |
 
 Each Coder step is a **ReAct loop** with access to filesystem and shell tools.
 
@@ -35,13 +37,13 @@ Each Coder step is a **ReAct loop** with access to filesystem and shell tools.
 
 ## Coder tools
 
-| Tool | What it does |
-|---|---|
-| `write_file` | Writes content to a file inside `generated_project/` |
-| `read_file` | Reads an existing file |
-| `list_files` | Lists all files in a directory |
-| `get_current_directory` | Returns the project root path |
-| `run_cmd` | Executes shell commands (e.g. `npm install`, `ls`) |
+| Tool                      | What it does                                           |
+| ------------------------- | ------------------------------------------------------ |
+| `write_file`            | Writes content to a file inside `generated_project/` |
+| `read_file`             | Reads an existing file                                 |
+| `list_files`            | Lists all files in a directory                         |
+| `get_current_directory` | Returns the project root path                          |
+| `run_cmd`               | Executes shell commands (e.g.`npm install`, `ls`)  |
 
 All file operations are sandboxed — the agent cannot write outside `generated_project/`.
 
